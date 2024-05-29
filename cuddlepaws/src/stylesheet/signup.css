@@ -1,0 +1,29 @@
+.form{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.form-container {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    width: 30%;
+    background-color: #393939;
+    padding: 30px; 
+}
+
+.up-text{
+    padding-bottom: 25px;
+    color: #F19600;
+    text-align: center;
+}
+
+.btn-1{
+    margin-top: 20px;
+}
+

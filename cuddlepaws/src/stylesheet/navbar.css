@@ -1,0 +1,40 @@
+.nav-text {
+    font-size: 23px;
+    color: #FEFFDB;
+    text-decoration: none; 
+}
+
+.nav-text:hover {
+    color: #F19600;
+}
+
+.nav-sign {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.nav-sign:hover {
+    color: rgb(180, 31, 31);
+    text-decoration: none;
+}
+
+.nav-dropdown .dropdown-toggle {
+    font-size: 23px;
+    color: white;
+}
+
+.nav-dropdown .dropdown-toggle::after {
+    color: white;
+}
+
+.nav-dropdown .dropdown-toggle:hover,
+.nav-dropdown .dropdown-toggle:focus {
+    color: #F19600;
+}
+
+.back-round {
+    padding: 15px;
+    height: 10vh;
+    opacity: 1;
+    background-color: #393939;
+}
