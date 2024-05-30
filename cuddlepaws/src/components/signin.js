@@ -28,7 +28,7 @@ function signin(){
                     Don't have an account?
                     </Link></div>
                 <Button className="btn-2" type="submit">
-                    <Link to='/'>
+                    <Link className="signIn" to='/'>
                     SIGN IN   
                     </Link>
                 </Button>
@@ -36,7 +36,7 @@ function signin(){
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     )
 }
 

@@ -3,7 +3,7 @@ import '../stylesheet/edit.css';
 function edit(){
     return(
         <div>
-            Edit
+            Here you can see your items!
         </div>
     )
 }

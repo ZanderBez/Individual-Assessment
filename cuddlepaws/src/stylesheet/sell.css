@@ -1,0 +1,46 @@
+.sell-form {
+    font-family: "Acme", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+}
+  
+.sell-form label {
+    margin-bottom: 8px;
+}
+  
+.sell-form input,
+.sell-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+}
+  
+.sell-form button {
+    background-color: #F19600;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+  
+.sell-form button:hover {
+    background-color: #7a4b00;
+}
+
+.sell-text h1{
+    font-family: "Acme", sans-serif;
+    text-align: center;
+}
+
+.sell-text p{
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+}
+  

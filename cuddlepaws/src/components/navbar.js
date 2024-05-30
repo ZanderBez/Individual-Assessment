@@ -23,7 +23,7 @@ function NavbarComponent() {
                           <Link to="/" className='nav-text'>Home</Link>
                             </Nav.Link>
                           <Nav.Link>
-                              <Link to="/items" className='nav-text'>DeleteItems</Link>
+                              <Link to="/items" className='nav-text'>Items</Link>
                           </Nav.Link>
                             <Nav.Link>
                               <Link to="/sell" className='nav-text'>CreateItem</Link>
