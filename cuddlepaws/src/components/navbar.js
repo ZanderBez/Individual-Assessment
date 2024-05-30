@@ -23,10 +23,13 @@ function NavbarComponent() {
                           <Link to="/" className='nav-text'>Home</Link>
                             </Nav.Link>
                           <Nav.Link>
-                              <Link to="/items" className='nav-text'>Stock</Link>
+                              <Link to="/items" className='nav-text'>DeleteItems</Link>
                           </Nav.Link>
                             <Nav.Link>
-                              <Link to="/sell" className='nav-text'>Sell</Link>
+                              <Link to="/sell" className='nav-text'>CreateItem</Link>
+                          </Nav.Link>
+                          <Nav.Link>
+                              <Link to="/edit" className='nav-text'>EditItems</Link>
                           </Nav.Link>
                     </Nav>
                       <Nav>

@@ -9,6 +9,7 @@ import Items from './components/items.js'
 import Sell from './components/sell.js'
 import SignIn from './components/signin.js'
 import SignUp from './components/signup.js'
+import Edit from './components/edit.js';
 import './App.css';
 import Navbar from './components/navbar.js'
 
@@ -19,7 +20,7 @@ function App() {
   setLoading(true)
   setTimeout(() => {
       setLoading(false)
-  }, 2000)
+  }, 1000)
 }, [])
   return (
     <div className='app'>
@@ -41,6 +42,7 @@ function App() {
         <Routes>
           <Route path="/items" element={<Items />} />
           <Route path="/sell" element={<Sell />} />
+          <Route path="/edit" element={<Edit />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/" element={<Home />} />

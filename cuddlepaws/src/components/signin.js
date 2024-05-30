@@ -28,7 +28,9 @@ function signin(){
                     Don't have an account?
                     </Link></div>
                 <Button className="btn-2" type="submit">
-                    SIGN IN
+                    <Link to='/'>
+                    SIGN IN   
+                    </Link>
                 </Button>
                 </Form>
                 </div>
