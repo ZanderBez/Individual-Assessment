@@ -25,7 +25,7 @@ function signin(){
                 </FloatingLabel>
                 <div className="in-info">
                     <Link to='/signup'>
-                    Have an account?
+                    Don't have an account?
                     </Link></div>
                 <Button className="btn-2" type="submit">
                     SIGN IN

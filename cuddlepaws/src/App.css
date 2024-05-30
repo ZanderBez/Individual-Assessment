@@ -1,1 +1,8 @@
-
+.app {
+    position: relative;
+  }
+  
+  .spinner {
+    margin-top: 440px;
+    left: 48%;
+  }
