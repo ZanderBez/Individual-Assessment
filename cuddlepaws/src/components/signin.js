@@ -67,8 +67,8 @@ function SignIn() {
               />
               {errors.password && <p>{errors.password.message}</p>}
             </FloatingLabel>
-            <div className="in-info">
-              <Link to="/signup">Don't have an account?</Link>
+            <div>
+              <Link className="in-info" to="/signup">Don't have an account?</Link>
             </div>
             <Button className="btn-2" type="submit" disabled={loading}>
               {loading ? 'Signing In...' : 'SIGN IN'}

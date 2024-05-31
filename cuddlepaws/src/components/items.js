@@ -1,20 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import '../stylesheet/items.css';
 import { fetchPetStoreItems } from '../components/API';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Pagination from 'react-bootstrap/Pagination';
+import '../stylesheet/items.css'
 
 function Items() {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const formData = {};
+  const [activePage, setActivePage] = useState(1);
 
-  useEffect(() => {
-    axios.post('/api/users/petItems', formData)  // Update to your backend endpoint
-      .then(response => setItems(response.data))
-      .catch(error => console.error('Error fetching items:', error));
-  }, []);
-  
   useEffect(() => {
     fetchPetStoreItems()
       .then(data => setItems(data))
@@ -25,16 +20,39 @@ function Items() {
     setSearchTerm(event.target.value);
   };
 
-  const filteredItems = items.filter(item =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handlePageChange = (pageNumber) => {
+    setActivePage(pageNumber);
+  };
+
+  const itemsPerPage = 6; // Number of items per page
+  const indexOfLastItem = activePage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
+
+  const renderPaginationItems = () => {
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    const paginationItems = [];
+    for (let number = 1; number <= totalPages; number++) {
+      paginationItems.push(
+        <Pagination.Item
+          key={number}
+          active={number === activePage}
+          onClick={() => handlePageChange(number)}
+          className="pagination-item"
+        >
+          {number}
+        </Pagination.Item>
+      );
+    }
+    return paginationItems;
+  };
 
   return (
     <div>
       <div className="hero-section">
         <div className='overlay'>
           <div className='welcome-text'>
-            <h1>List of Our Products !</h1>
+            <h1>List of Our Products!</h1>
             <p>Explore our curated collection of top-quality products for your beloved pets</p>
             <input className='search-bar'
               type="text"
@@ -46,17 +64,19 @@ function Items() {
         </div>
       </div>
       <div className="product-list">
-        {filteredItems.map(item => (
+        {currentItems.map(item => (
           <div key={item.id} className="product-card">
             <img src={item.image} alt={item.name} className="product-image" />
             <h2>{item.name}</h2>
             <p>Price: ${item.price.toFixed(2)}</p>
-            <button className="product-button"><Link to={`/details/${item.id}`}>
-            Buy Now
-              </Link>
-              </button>
+            <button className="product-button">
+              <Link to={`/details/${item.id}`}>Buy Now</Link>
+            </button>
           </div>
         ))}
+      </div>
+      <div className="pagination-container">
+        <Pagination>{renderPaginationItems()}</Pagination>
       </div>
       <footer className="footer">
         <div className="footer-content">

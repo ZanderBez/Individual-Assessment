@@ -2,8 +2,7 @@
 .navbar-nav .nav-link.nav-text {
     font-family: "Acme", sans-serif;
     font-size: 23px;
-    color: #FEFFDB ; 
-    text-decoration: none; 
+    color: #FEFFDB ;
 }
 
 .navbar-nav .nav-link.nav-text:hover {
@@ -44,4 +43,8 @@
     height: 10vh;
     opacity: 1;
     background-color: #393939;
+}
+
+.nav-text.active {
+    color: #F19600 !important;
 }

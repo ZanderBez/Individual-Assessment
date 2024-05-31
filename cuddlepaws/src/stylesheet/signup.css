@@ -19,11 +19,11 @@
 
 .up-text{
     padding-bottom: 25px;
-    color: #393939;
+    color: white;
     text-align: center;
 }
 
 .btn-1{
+    background-color: #F19600;
     margin-top: 20px;
 }
-

@@ -19,7 +19,7 @@ const PetItemSchema = new Schema({
         type: String,
         required: true,
     },
-}, { collection: 'petItems' });  // Specify the collection name (optional)
+}, { collection: 'petItems' });
 
 const PetItem = model('PetItem', PetItemSchema);
 export default PetItem;

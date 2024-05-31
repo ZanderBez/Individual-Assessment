@@ -13,7 +13,7 @@
     height: 73.7vh;
     width: 100%;
 }
-  
+
 .image-container {
     border: solid 2px #F19600;
     border-radius: 20px;
@@ -42,6 +42,7 @@
     font-family: "Acme", sans-serif;
     padding: 10px;
     text-align: center;
+    margin-top: 3px;
 }
 
 .item-name{
@@ -72,4 +73,19 @@
 .detail-button:hover {
     background-color: #7a4b00;
 }
+
+
+.back-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    margin-top: -80px;
+}
+
+.back-button {
+    color: #F19600 !important; /* Change the color to #F19600 */
+    font-size: 50px; /* Adjust the font size to make the arrow bigger */
+}
+
+
   

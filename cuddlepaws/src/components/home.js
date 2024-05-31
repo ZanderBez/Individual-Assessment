@@ -17,7 +17,9 @@ function Home() {
     setSearchTerm(event.target.value);
   };
 
+  // Filter items based on ID range (3 to 10)
   const filteredItems = items.filter(item =>
+    item.id >= 4 && item.id <= 10 &&
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
