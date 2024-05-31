@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ClockLoader from "react-spinners/ClockLoader";
-
 // Routes
 import Home from './components/home.js';
 import Items from './components/items.js';

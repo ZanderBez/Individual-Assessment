@@ -1,39 +1,43 @@
-.nav-text {
+
+.navbar-nav .nav-link.nav-text {
     font-family: "Acme", sans-serif;
     font-size: 23px;
-    color: #FEFFDB;
+    color: #FEFFDB ; 
     text-decoration: none; 
 }
 
-.nav-text:hover {
-    color: #F19600;
+.navbar-nav .nav-link.nav-text:hover {
+    color: #F19600 ;
 }
 
-.nav-sign {
+
+.nav-dropdown .dropdown-item.nav-sign {
     font-family: "Acme", sans-serif;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0) ; 
     text-decoration: none;
 }
 
-.nav-sign:hover {
-    color: rgb(216, 146, 17);
+.nav-dropdown .dropdown-item.nav-sign:hover {
+    color: rgb(216, 146, 17) ;
     text-decoration: none;
 }
+
 
 .nav-dropdown .dropdown-toggle {
     font-family: "Acme", sans-serif;
     font-size: 23px;
-    color: white;
+    color: white ; 
 }
 
 .nav-dropdown .dropdown-toggle::after {
-    color: white;
+    color: white ; 
 }
 
 .nav-dropdown .dropdown-toggle:hover,
 .nav-dropdown .dropdown-toggle:focus {
-    color: #F19600;
+    color: #F19600 ;
 }
+
 
 .back-round {
     padding: 15px;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../stylesheet/home.css';
-import { fetchPetStoreItems } from '../components/API';
+import { fetchPetStoreItems } from './API';
 
 function Home() {
   const [items, setItems] = useState([]);

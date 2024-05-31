@@ -11,38 +11,26 @@ function NavbarComponent() {
         <div>
             <Navbar collapseOnSelect expand="lg" className="back-round">
                 <Container>
-                  <Navbar.Brand>
-                    <Link to='/' className='nav-logo'>
-                      <img src={Logo} alt="cuddlepaws" />
-                    </Link>
-                  </Navbar.Brand>
-                  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                  <Navbar.Collapse id="responsive-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link>
-                          <Link to="/" className='nav-text'>Home</Link>
-                            </Nav.Link>
-                          <Nav.Link>
-                              <Link to="/items" className='nav-text'>Items</Link>
-                          </Nav.Link>
-                            <Nav.Link>
-                              <Link to="/sell" className='nav-text'>CreateItem</Link>
-                          </Nav.Link>
-                          <Nav.Link>
-                              <Link to="/edit" className='nav-text'>EditItems</Link>
-                          </Nav.Link>
-                    </Nav>
-                      <Nav>
-                        <NavDropdown title="Account" id="collasible-nav-dropdown" className="nav-dropdown">
-                            <NavDropdown.Item as="span">
-                                 <Link to="signin" className='nav-sign'>Sign In</Link>
-                            </NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item>
-                                <Link to="/signup" className='nav-sign'>Sign Up</Link>
-                            </NavDropdown.Item>
-                        </NavDropdown>
-                      </Nav>
+                    <Navbar.Brand>
+                        <Link to='/' className='nav-logo'>
+                            <img src={Logo} alt="cuddlepaws" />
+                        </Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link as={Link} to="/" className='nav-text'>Home</Nav.Link>
+                            <Nav.Link as={Link} to="/items" className='nav-text'>Items</Nav.Link>
+                            <Nav.Link as={Link} to="/sell" className='nav-text'>CreateItem</Nav.Link>
+                            <Nav.Link as={Link} to="/edit" className='nav-text'>EditItems</Nav.Link>
+                        </Nav>
+                        <Nav>
+                            <NavDropdown title="Account" id="collasible-nav-dropdown" className="nav-dropdown">
+                                <NavDropdown.Item as={Link} to="/signin" className='nav-sign'>Sign In</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item as={Link} to="/signup" className='nav-sign'>Sign Up</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

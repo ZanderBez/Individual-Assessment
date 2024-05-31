@@ -1,63 +1,46 @@
-const express = require('express');
+import express from 'express';
+import bcrypt from 'bcryptjs';
+import User from '../models/User.js';
+
 const router = express.Router();
-const User = require('../models/User');
 
 // Create a new user
-router.post('/register', async (req,res) =>{
-    const { name, email, password } = req.body;
-
+router.post('/register', async (req, res) => {
+    console.log("Attempting to save user:", req.body);
     try {
-        const user = new User ({ name, email, password });
-        await user.save();
-        res.status(201).json(user);
-    } catch (err){
-        res.status(400).json({ error: err.message });
+        const hashedPassword = await bcrypt.hash(req.body.password, 10);
+        const newUser = new User({
+            username: req.body.name,
+            email: req.body.email,
+            password: hashedPassword,
+        });
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+    } catch (err) {
+        console.error("Error in user registration:", err);
+        res.status(500).json({ message: 'Error adding user', error: err.message });
     }
 });
 
-// Update User
-router.put('/:id', async (req,res) => {
-    const { id } = req.params;
-    const { name, email, password } = req.body;
-
+// User login
+router.post('/login', async (req, res) => {
+    const { email, password } = req.body;
     try {
-        const user = await User.findByIdAndUpdate(id, { name, email, password }, {new: true, runValidators: true});
-
+        const user = await User.findOne({ email });
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
 
-        res.status(200).json(user);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-});
-
-// Delete User
-router.delete('/:id', async (req, res) => {
-    const { id } = req.params;
-
-    try {
-        const user = await User.findByIdAndDelete(id);
-
-        if (!user) {
-            return res.status(404).json({ error: 'User not found' });
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(400).json({ error: 'Invalid credentials' });
         }
 
-        res.status(200).json({ message: 'User deleted successfully' });
+        res.status(200).json({ message: 'Login successful' });
     } catch (err) {
-        res.status(400).json({ error: err.message });
+        console.error("Error during user login:", err);
+        res.status(500).json({ message: 'Server error', error: err.message });
     }
 });
-// Get all users
-router.get('/', async (req, res) => {
-    try{
-        const users = await User.find();
-        res.status(200).json(users);
-    } catch (err) {
-        res.status(400).json({ error: err.message });
-    }
-})
 
-
-module.exports = router;
+export default router;
