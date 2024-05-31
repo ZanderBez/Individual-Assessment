@@ -1,5 +1,6 @@
+// src/components/SignIn.js
 import "../stylesheet/signin.css";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -8,8 +9,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import axios from 'axios';
+import { AuthContext } from '../context/Authcontext';
 
-// Validation schema
 const schema = yup.object().shape({
   email: yup.string().email('Invalid email format').required('Email is required'),
   password: yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
@@ -22,13 +23,15 @@ function SignIn() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
 
   const handleSignIn = async (data) => {
     setLoading(true);
     setMessage('');
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', data); 
+      const response = await axios.post('http://localhost:5000/api/users/login', data);
       setMessage('Login successful');
+      login(response.data.user);  // Pass user data to the login function
       setLoading(false);
       navigate('/');
     } catch (error) {

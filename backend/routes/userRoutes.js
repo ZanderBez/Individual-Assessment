@@ -1,3 +1,4 @@
+// src/routes/userRoutes.js
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import User from '../models/User.js';
@@ -36,7 +37,14 @@ router.post('/login', async (req, res) => {
             return res.status(400).json({ error: 'Invalid credentials' });
         }
 
-        res.status(200).json({ message: 'Login successful' });
+        res.status(200).json({ 
+            message: 'Login successful',
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email
+            }
+        });
     } catch (err) {
         console.error("Error during user login:", err);
         res.status(500).json({ message: 'Server error', error: err.message });
