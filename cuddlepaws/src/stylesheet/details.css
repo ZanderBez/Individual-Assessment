@@ -63,6 +63,7 @@
     color: #FFFFFF;
     text-decoration: none;
     border: none;
+    border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -83,8 +84,8 @@
 }
 
 .back-button {
-    color: #F19600 !important; /* Change the color to #F19600 */
-    font-size: 50px; /* Adjust the font size to make the arrow bigger */
+    color: #F19600 !important;
+    font-size: 50px;
 }
 
 

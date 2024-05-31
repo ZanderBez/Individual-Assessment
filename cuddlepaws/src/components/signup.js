@@ -1,4 +1,3 @@
-// src/components/Signup.js
 import "../stylesheet/signup.css";
 import { useState, useContext } from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';

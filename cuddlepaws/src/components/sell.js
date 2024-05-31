@@ -110,7 +110,7 @@ function Sell() {
             <button className="delete-button" onClick={() => handleDelete(item._id)}>✕</button>
             <img src={item.image} alt={item.name} className="product-image" />
             <h2>{item.name}</h2>
-            <p>Price: ${item.price.toFixed(2)}</p>
+            <p>Price: R{item.price.toFixed(2)}</p>
             <button className="product-button">
               <Link to={`/details/${item._id}`}>
                 Buy Now

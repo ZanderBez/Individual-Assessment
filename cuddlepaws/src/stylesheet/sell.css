@@ -20,6 +20,7 @@
 }
   
 .sell-form button {
+    border-radius: 15px;
     background-color: #F19600;
     color: #FFFFFF;
     border: none;

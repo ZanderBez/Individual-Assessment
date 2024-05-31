@@ -97,6 +97,7 @@
     color: #FFFFFF;
     text-decoration: none;
     border: none;
+    border-radius: 15px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -110,7 +111,7 @@
 }
   
 .product-button:hover {
-    background-color: #7a4b00;
+    background-color: #ad761d;
 }
 
 

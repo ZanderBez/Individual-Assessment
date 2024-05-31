@@ -17,7 +17,6 @@ function Home() {
     setSearchTerm(event.target.value);
   };
 
-  // Filter items based on ID range (3 to 10)
   const filteredItems = items.filter(item =>
     item.id >= 4 && item.id <= 10 &&
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -47,7 +46,7 @@ function Home() {
           <div key={item.id} className="product-card">
             <img src={item.image} alt={item.name} className="product-image" />
             <h2>{item.name}</h2>
-            <p>Price: ${item.price.toFixed(2)}</p>
+            <p>Price: R{item.price.toFixed(2)}</p>
             <button className="product-button">
               <Link to={`/details/${item.id}`}>
                 Buy Now

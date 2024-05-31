@@ -4,17 +4,32 @@ import { fetchPetStoreItems } from '../components/API';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-bootstrap/Pagination';
 import '../stylesheet/items.css'
+import axios from 'axios';
 
 function Items() {
   const [items, setItems] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [activePage, setActivePage] = useState(1);
+  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
     fetchPetStoreItems()
       .then(data => setItems(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/petItems');
+        setProductList(response.data);
+      } catch (error) {
+        console.error('Error fetching items:', error);
+      }
+    };
+
+    fetchItems();
+  }, []); 
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
@@ -68,9 +83,25 @@ function Items() {
           <div key={item.id} className="product-card">
             <img src={item.image} alt={item.name} className="product-image" />
             <h2>{item.name}</h2>
-            <p>Price: ${item.price.toFixed(2)}</p>
+            <p>Price: R{item.price.toFixed(2)}</p>
             <button className="product-button">
-              <Link to={`/details/${item.id}`}>Buy Now</Link>
+              <Link to={`/details/${item.id}`}>
+                Buy Now
+                </Link>
+            </button>
+          </div>
+        ))}
+      </div>
+      <div className="product-list">
+        {productList.map(item => (
+          <div key={item._id} className="product-card">
+            <img src={item.image} alt={item.name} className="product-image" />
+            <h2>{item.name}</h2>
+            <p>Price: R{item.price.toFixed(2)}</p>
+            <button className="product-button">
+              <Link to={`/details/${item._id}`}>
+                Buy Now
+              </Link>
             </button>
           </div>
         ))}

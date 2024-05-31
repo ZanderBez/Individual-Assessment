@@ -1,4 +1,3 @@
-// src/components/SignIn.js
 import "../stylesheet/signin.css";
 import { useState, useContext } from 'react';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
@@ -31,7 +30,7 @@ function SignIn() {
     try {
       const response = await axios.post('http://localhost:5000/api/users/login', data);
       setMessage('Login successful');
-      login(response.data.user);  // Pass user data to the login function
+      login(response.data.user);
       setLoading(false);
       navigate('/');
     } catch (error) {
@@ -70,7 +69,7 @@ function SignIn() {
             <div>
               <Link className="in-info" to="/signup">Don't have an account?</Link>
             </div>
-            <Button className="btn-2" type="submit" disabled={loading}>
+            <Button className="btn-1" type="submit" disabled={loading}>
               {loading ? 'Signing In...' : 'SIGN IN'}
             </Button>
           </Form>

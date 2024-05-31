@@ -33,7 +33,7 @@ function Details() {
       <div className='container-fluid'>
         <div className='details-text'><h1>{item.name}</h1>
           <div className="back-button-container">
-            <Link to="/" className="back-button">
+            <Link to="/items" className="back-button">
               <BsArrowLeft className="mr-2" />
             </Link>
       </div>
@@ -50,7 +50,7 @@ function Details() {
               <p>{item.description}</p>
             </div>
             <div className='item-price'>
-              <h3>Price: ${item.price.toFixed(2)}</h3>
+              <h3>Price: R{item.price.toFixed(2)}</h3>
             </div>
             <button className="detail-button">Buy Now</button>
           </div>
