@@ -35,8 +35,8 @@ function NavbarComponent() {
                         </Nav>
                         <Nav>
                             {user ? (
-                                <NavDropdown title={user.username} id="collasible-nav-dropdown" className="nav-dropdown">
-                                    <NavDropdown.Item onClick={handleLogout} className='nav-sign'>Logout</NavDropdown.Item>
+                                <NavDropdown title= {user.username} id="collasible-nav-dropdown" className="nav-dropdown">
+                                    <NavDropdown.Item onClick={handleLogout} as={Link} to="/signin" className='nav-sign'>Logout</NavDropdown.Item>
                                 </NavDropdown>
                             ) : (
                                 <NavDropdown title="Account" id="collasible-nav-dropdown" className="nav-dropdown">

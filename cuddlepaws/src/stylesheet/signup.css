@@ -13,13 +13,13 @@
     flex-direction: column; 
     justify-content: center;
     width: 30%;
-    background-color: #393939;
+    background-color: #dd9858;
     padding: 30px; 
 }
 
 .up-text{
     padding-bottom: 25px;
-    color: #F19600;
+    color: #393939;
     text-align: center;
 }
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import '../stylesheet/sell.css';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import '../stylesheet/sell.css'
 
 function Sell() {
   const [formData, setFormData] = useState({
@@ -18,23 +20,22 @@ function Sell() {
     }));
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
+    console.log("it works")
     e.preventDefault();
-    const newItem = {
-      id: Date.now(),
-      image: formData.image,
-      name: formData.name,
-      price: parseFloat(formData.price),
-      description: formData.description
-    };
-    setProductList(prevList => [...prevList, newItem]);
-    setFormData({
-      image: '',
-      name: '',
-      price: '',
-      description: ''
-    });
-    
+    try {
+      const response = await axios.post('/api/users/petItems', formData);
+      const savedItem = response.data;
+      setProductList(prevList => [...prevList, savedItem]);
+      setFormData({
+        image: '',
+        name: '',
+        price: '',
+        description: ''
+      });
+    } catch (error) {
+      console.error('Error adding item:', error);
+    }
   };
 
   return (
@@ -88,8 +89,11 @@ function Sell() {
             <img src={item.image} alt={item.name} className="product-image" />
             <h2>{item.name}</h2>
             <p>Price: ${item.price.toFixed(2)}</p>
-            <p>{item.description}</p>
-            <button className="product-button">Buy Now</button>
+            <button className="product-button">
+              <Link to={`/details/${item.id}`}>
+                Buy Now
+              </Link>
+            </button>
           </div>
         ))}
       </div>

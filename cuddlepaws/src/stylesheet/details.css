@@ -1,0 +1,75 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+  
+.details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 73.7vh;
+    width: 100%;
+}
+  
+.image-container {
+    border: solid 2px #F19600;
+    border-radius: 20px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.image-container img {
+    width: 50%;
+    height: 55vh;
+}
+  
+.info-container {
+    padding: 20px;
+    border-radius: 20px;
+    height: 55vh;
+    font-family: "Oswald", sans-serif;
+    color: white;
+    background-color: #333;
+    flex: 1;
+}
+
+.details-text{
+    font-family: "Acme", sans-serif;
+    padding: 10px;
+    text-align: center;
+}
+
+.item-name{
+    padding-bottom: 20px;
+}
+
+.item-description{
+    font-size: 18px;
+    padding-bottom: 45px;
+}
+
+.item-price{
+    padding-bottom: 100px;
+}
+
+.detail-button {
+    background-color: #F19600;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
+}
+
+.detail-button:hover {
+    background-color: #7a4b00;
+}
+  

@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ClockLoader from "react-spinners/ClockLoader";
@@ -9,6 +8,7 @@ import Sell from './components/sell.js';
 import SignIn from './components/signin.js';
 import SignUp from './components/signup.js';
 import Edit from './components/edit.js';
+import Details from './components/details.js';
 import './App.css';
 import Navbar from './components/navbar.js';
 import { AuthProvider } from './context/Authcontext';
@@ -39,19 +39,19 @@ function App() {
           <Router>
             <Navbar />
             <Routes>
-                 <Route path="/items" element={<Items />} />
-                 <Route path="/sell" element={<Sell />} />
-                 <Route path="/edit" element={<Edit />} />
-                 <Route path="/signin" element={<SignIn />} />
-                 <Route path="/signup" element={<SignUp />} />
-                 <Route path="/" element={<Home />} />
-               </Routes>
-             </Router>
-           </AuthProvider>
-         )}
-       </div>
-     );
-   }
+              <Route path="/items" element={<Items />} />
+              <Route path="/sell" element={<Sell />} />
+              <Route path="/edit" element={<Edit />} />
+              <Route path="/details/:id" element={<Details />} />
+              <Route path="/signin" element={<SignIn />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Router>
+        </AuthProvider>
+      )}
+    </div>
+  );
+}
 
-   export default App;
-
+export default App;

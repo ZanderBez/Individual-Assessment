@@ -1,16 +1,5 @@
-.form-container {
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    width: 30%;
-    background-color: #393939;
-    padding: 30px; 
-}
-
 .in-text{
     padding-bottom: 25px;
-    color: #F19600;
     text-align: center;
 }
 

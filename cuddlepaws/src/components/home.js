@@ -1,15 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import '../stylesheet/home.css';
 import { fetchPetStoreItems } from './API';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const [items, setItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetchPetStoreItems()
       .then(data => setItems(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const filteredItems = items.filter(item =>
+    item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div>
@@ -18,6 +28,12 @@ function Home() {
           <div className='welcome-text'>
             <h1>Welcome to Pet Paradise!</h1>
             <p>Your one-stop shop for all your pet's needs. Quality products at great prices.</p>
+            <input className='search-bar'
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={handleSearch}
+            />
           </div>
         </div>
       </div>
@@ -25,13 +41,16 @@ function Home() {
         <h1>List of our best products</h1>
       </div>
       <div className="product-list">
-        {items.map(item => (
+        {filteredItems.map(item => (
           <div key={item.id} className="product-card">
             <img src={item.image} alt={item.name} className="product-image" />
             <h2>{item.name}</h2>
             <p>Price: ${item.price.toFixed(2)}</p>
-            <p>{item.description}</p>
-            <button className="product-button">Buy Now</button>
+            <button className="product-button">
+              <Link to={`/details/${item.id}`}>
+                Buy Now
+              </Link>
+            </button>
           </div>
         ))}
       </div>

@@ -2,8 +2,39 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import User from '../models/User.js';
+import PetItem from '../models/PetItems.js';
 
 const router = express.Router();
+
+
+// Create a new pet item
+router.post('/petItems', async (req, res) => {
+    console.log("Attempting to save pet item:", req.body);
+    try {
+        const newPetItem = new PetItem({
+            image: req.body.image,
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description
+        });
+        const savedPetItem = await newPetItem.save();
+        res.status(201).json(savedPetItem);
+    } catch (err) {
+        console.error("Error adding pet item:", err);
+        res.status(500).json({ message: 'Error adding pet item', error: err.message });
+    }
+});
+
+// Fetch all pet items
+router.get('/petItems', async (req, res) => {
+    try {
+        const petItems = await PetItem.find();
+        res.status(200).json(petItems);
+    } catch (err) {
+        console.error("Error fetching pet items:", err);
+        res.status(500).json({ message: 'Error fetching pet items', error: err.message });
+    }
+});
 
 // Create a new user
 router.post('/register', async (req, res) => {

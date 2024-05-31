@@ -34,11 +34,13 @@
 }
 
 .sell-text h1{
+    padding-top: 15px;
     font-family: "Acme", sans-serif;
     text-align: center;
 }
 
 .sell-text p{
+    padding-top: 10px;
     font-size: 25px;
     font-family: "Oswald", sans-serif;
     text-align: center;

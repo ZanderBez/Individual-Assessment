@@ -66,6 +66,7 @@
 }
   
 .product-image {
+    margin-top: 20px;
     width: 30%;
     height: 17vh;
     margin-bottom: 10px;
@@ -93,6 +94,7 @@
 .product-button {
     background-color: #F19600;
     color: #FFFFFF;
+    text-decoration: none;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -100,8 +102,21 @@
     transition: background-color 0.3s, color 0.3s;
     margin-top: 10px;
 }
+
+.product-button a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
   
 .product-button:hover {
     background-color: #7a4b00;
 }
-  
+
+
+.search-bar{
+    padding-left: 10px;
+    border-radius: 15px;
+    border: solid 1px #F19600;
+    width: 35%;
+    height: 5vh;
+}
