@@ -1,0 +1,112 @@
+.edit-back{
+    background: url('../assets/pngtree-cute-orange-pet-shop-promotion-banner-picture-image_994312.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 86.8vh;
+}
+.edit-form {
+    font-family: "Acme", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    margin: 0 auto;
+    background-color: #393939 ;
+    border-radius: 20px;
+}
+  
+.edit-form label {
+    margin-top: 5px;
+    color: white;
+}
+  
+.edit-form input,
+.edit-form textarea {
+    border-radius: 10px;
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 14px;
+    border: 1px solid #F19600;
+}
+  
+.edit-form button {
+    border-radius: 15px;
+    background-color: #F19600;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+  
+.edit-form button:hover {
+    background-color: #7a4b00;
+}
+
+.sell-text h1{
+    padding-top: 15px;
+    font-family: "Acme", sans-serif;
+    text-align: center;
+}
+
+.sell-text p{
+    padding-top: 10px;
+    font-size: 25px;
+    font-family: "Oswald", sans-serif;
+    text-align: center;
+}
+
+.delete-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.delete-button:hover{
+    background-color: rgb(189, 0, 0);
+}
+
+.edit-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #F19600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-button:hover {
+    background-color: #7a4b00;
+}
+
+.edit-title-text{
+    text-align: center;
+    font-size: 15px;
+}
+
+.edit-item-text{
+    font-family: "Acme", sans-serif;
+    text-align: center;
+    font-size: 40px;
+    padding: 15px 10px;
+    font-weight: bolder;
+    color: #FFFFFF;
+}
+

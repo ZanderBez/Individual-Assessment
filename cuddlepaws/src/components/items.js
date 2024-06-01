@@ -3,7 +3,6 @@ import '../stylesheet/items.css';
 import { fetchPetStoreItems } from '../components/API';
 import { Link } from 'react-router-dom';
 import Pagination from 'react-bootstrap/Pagination';
-import '../stylesheet/items.css'
 import axios from 'axios';
 
 function Items() {
@@ -87,7 +86,7 @@ function Items() {
             <button className="product-button">
               <Link to={`/details/${item.id}`}>
                 Buy Now
-                </Link>
+              </Link>
             </button>
           </div>
         ))}

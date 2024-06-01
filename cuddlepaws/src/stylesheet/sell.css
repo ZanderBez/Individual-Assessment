@@ -5,18 +5,23 @@
     align-items: center;
     max-width: 400px;
     margin: 0 auto;
+    background-color: #393939;
+    border-radius: 20px;
 }
   
 .sell-form label {
     margin-bottom: 8px;
+    color: #FFFFFF;
+    margin-top: 2px;
 }
   
 .sell-form input,
 .sell-form textarea {
-    width: 100%;
+    border-radius: 15px;
+    width: 95%;
     padding: 8px;
     margin-bottom: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #F19600;
 }
   
 .sell-form button {
@@ -27,6 +32,7 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 20px;
     transition: background-color 0.3s, color 0.3s;
 }
   
@@ -47,19 +53,7 @@
     text-align: center;
 }
 
-.delete-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.sell-back{
+    background: url('../assets/seamless-colorful-pattern-with-dogs-paws-background-pet-shop-veterinary-clinic-pet-store-zoo-shelter-flat-style-design-vector-illustration_562639-773.avif');
+    height: 90vh;
 }
-  
