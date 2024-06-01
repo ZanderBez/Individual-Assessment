@@ -15,12 +15,10 @@ function Details() {
     const fetchItem = async () => {
       try {
         let response;
-        // Determine if the ID is from MongoDB or the other API
         if (id.length === 24) {
           // MongoDB ObjectID
           response = await axios.get(`http://localhost:5000/api/petItems/${id}`);
         } else {
-          // Fallback to fetch from other API
           const data = await fetchPetStoreItems();
           response = { data: data.find(p => p.id === parseInt(id, 10)) };
         }
