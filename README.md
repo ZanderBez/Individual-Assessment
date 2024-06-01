@@ -82,22 +82,14 @@ These instructions will get you a copy of the project up and running on your loc
 1. Create a `.env` file in the `backend` directory and add the following environment variables:
 
     ```env
-    MONGO_URI=your_mongodb_connection_string
-    JWT_SECRET=your_jwt_secret_key
+    PORT=5000
+    MONGO_URI=mongodb+srv://Zander:Zander12345@cluster0.owamm0a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
     ```
 
 2. Ensure your MongoDB server is running. You can start MongoDB with the following command:
 
     ```sh
     mongod
-    ```
-
-### Frontend Setup
-
-1. Create a `.env` file in the `frontend` directory and add the following environment variables:
-
-    ```env
-    REACT_APP_API_URL=http://localhost:5000
     ```
 
 ## Running the Project
@@ -150,3 +142,5 @@ Contributions are what make the open source community such an amazing place to b
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Demo Recording
+
+[Demo Vid](https://drive.google.com/file/d/16wtvbc6pxJcJf_5QYPwx7mRG-Q1JACyy/view?usp=drive_link)
