@@ -1,66 +1,135 @@
-![WeatherTrackerLogo](./cuddlepaws/src/assets/logo.svg)
-
+![CuddlePawsLogo](./cuddlepaws/src/assets/logo.svg)
 
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-   * [Home](#home)
+   * [Home, Sign In and Sign Up](#home-sign-in-and-sign-up)
    * [Items](#items)
-   * [CreateItems](#createitems)
-   * [EditItems](#edititems)
-   * [SignIn](#signin)
-   * [SignUp](#ignup)
+   * [Create Items](#create-items)
+   * [Edit Items](#edit-items)
 * [Getting Started](#getting-started)
-  * [Install all dependencies](#install-all-dependencies)
-  * [Installing](#installing)
+  * [Backend](#backend)
+  * [Frontend](#frontend)
+  * [Setup](#setup)
+    * [Backend Setup](#backend-setup)
+    * [Frontend Setup](#frontend-setup)
+  * [Running the Project](#running-the-project)
+    * [Running the Backend](#running-the-backend)
+    * [Running the Frontend](#running-the-frontend)
 * [Built With](#built-with)
 * [Contributing](#contributing)
 * [Authors](#authors)
 * [License](#license)
-* [Vlog](#vlog)
+* [Demo Recording](#demo-recording)
 
 ## About The Project
 
 The objective of this project is to develop a comprehensive and user-friendly pet store website that allows users to buy and sell pet-related items. The platform aims to cater to pet owners and pet enthusiasts, providing a marketplace for various pet supplies such as food, toys, accessories, and more. MongoDB will be used as the primary database for storing and managing data related to products, users, orders, and other essential aspects of the website.
 
-### Home
+### Home, Sign In and Sign Up
 
-![WeatherTrackerLogo](/Assets/Weather%20tracker%20mock%20Ups.png)
+![Home, Sign In and Sign Up](./cuddlepaws/src/assets/Home.png)
 
 ### Items
 
-### CreateItems
+![Items](./cuddlepaws/src/assets/Items.png)
 
-### EditItems
+### Create Items
 
-### SignIn
+![Create Items](./cuddlepaws/src/assets/Add.png)
 
-### SignUp
+### Edit Items
 
+![Edit Items](./cuddlepaws/src/assets/edit.png)
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
- ### Install all dependencies
-- 
-### Installing
+### Backend
 
-1. Clone the repo
-```sh
-git clone https://github.com/ZanderBez/Individual-Assessment
-```
-2. Open the project
+1. Clone the repository:
 
-Use `Open Workspace` in Visual Studio.
+    ```sh
+    git clone https://github.com/your-username/cuddle-paws.git
+    cd cuddle-paws/backend
+    ```
+
+2. Install backend dependencies:
+
+    ```sh
+    npm install npm install bcryptjs cors dotenv express mongodb mongoose nodemon
+    ```
+
+### Frontend
+
+1. Navigate to the frontend directory:
+
+    ```sh
+    cd ../cuddlepaws
+    ```
+
+2. Install frontend dependencies:
+
+    ```sh
+    npm install @hookform/resolvers @testing-library/jest-dom @testing-library/react @testing-library/user-event axios bootstrap bootstrap-icons react react-bootstrap react-dom react-hook-form react-icons react-router-dom react-scripts react-spinners web-vitals yup
+    ```
+
+## Setup
+
+### Backend Setup
+
+1. Create a `.env` file in the `backend` directory and add the following environment variables:
+
+    ```env
+    MONGO_URI=your_mongodb_connection_string
+    JWT_SECRET=your_jwt_secret_key
+    ```
+
+2. Ensure your MongoDB server is running. You can start MongoDB with the following command:
+
+    ```sh
+    mongod
+    ```
+
+### Frontend Setup
+
+1. Create a `.env` file in the `frontend` directory and add the following environment variables:
+
+    ```env
+    REACT_APP_API_URL=http://localhost:5000
+    ```
+
+## Running the Project
+
+### Running the Backend
+
+1. Start the backend server:
+
+    ```sh
+    cd backend
+    npm start
+    ```
+
+    The backend server will run on `http://localhost:5000`.
+
+### Running the Frontend
+
+1. Start the frontend development server:
+
+    ```sh
+    cd cuddlepaws
+    npm start
+    ```
+
+    The frontend server will run on `http://localhost:3000`.
 
 ## Built With
 
-* [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+* [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [React](https://react.dev/)
 * [Bootstrap](https://getbootstrap.com/)
-* [MongoDB](https://www.mongodb.com/lp/cloud/atlas/try4?utm_source=google&utm_campaign=search_gs_pl_evergreen_atlas_core_prosp-brand_gic-null_emea-za_ps-all_desktop_eng_lead&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624560&adgroup=115749711783&cq_cmp=12212624560&gad_source=1&gclid=CjwKCAjwjeuyBhBuEiwAJ3vuobDAOofPUDN8CCzq495-xxmQl8uIufH4CvvunnNGboR6IoZQ9UILBBoCgQUQAvD_BwE)
-
+* [MongoDB](https://www.mongodb.com/)
 
 ## Contributing
 
@@ -74,14 +143,10 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Authors
 
-* **Zander Bezuidenhout** - *Javascript, HTML ,CSS, React, & MongoDB* - [ZanderBezuidenhout](https://github.com/ZanderBez)
-
-
+* **CuddlePaws** - *JavaScript, HTML, CSS, React, & MongoDB* - [CuddlePaws](https://github.com/CuddlePaws)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-
-## Demo Recording 
-
+## Demo Recording
